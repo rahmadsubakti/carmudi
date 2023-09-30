@@ -1,0 +1,20 @@
+url: response.url
+merk: response.css('div.o-container li[itemprop="itemListElement"] span::text').getall()[2]
+model : response.css('div.o-container li[itemprop="itemListElement"] span::text').getall()[3]
+varian : response.css('div.o-container li[itemprop="itemListElement"] span::text').getall()[4]
+title : response.xpath('//h1').css('::text').get()
+tahun : response.xpath("//*[contains(text(), 'Tahun Kendaraan')]/following-sibling::*").css('::text').get()
+kilometer : response.xpath('//span[contains(text(), "Kilometer")]/following-sibling::*').css('::text').get()
+warna : response.xpath('//span[contains(text(), "Warna")]/following-sibling::*').css('::text').get()
+engine cc : response.xpath('//span[contains(text(), "Cakupan mesin")]/following-sibling::*').css('::text').get()
+transmisi : response.xpath('//span[contains(text(), "Transmisi")]/following-sibling::*').css('::text').get()
+penumpang : response.xpath('//span[contains(text(), "Penumpang")]/following-sibling::*').css('::text').get()
+pintu : response.xpath("//span[contains(text(), 'Pintu')]/following-sibling::*").css('::text').get()
+panjang : response.xpath("//span[contains(text(), 'Panjang')]/following-sibling::*").css('::text').get()
+lebar : response.xpath("//span[contains(text(), 'Lebar')]/following-sibling::*").css('::text').get()
+tinggi : response.xpath("//span[contains(text(), 'Tinggi')]/following-sibling::*").css('::text').get()
+harga: response.xpath("//div[@class='listing__item-price']/h3").css('::text').get()
+
+cars = response.xpath('//h2[@class="listing__title  epsilon  flush"]/a').css('::attr(href)').getall()
+
+next_page = response.xpath('//li[@class="next"]/a').css('::attr(href)').getall()
